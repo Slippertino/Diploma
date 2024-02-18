@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="robot_db" id="F44A2D00-0C46-CB81-631A-B6AA42899520" version="3.5">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-01-30 21:39:38 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>F44A2D00-0C46-CB81-631A-B6AA42899520</designId>
+</OSDM_Design>
