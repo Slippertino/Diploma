@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C3BDA7E5-91BD-516E-0430-00A6099B5D05" name="ResourcesAdjacencySec">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:27:21 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdFrom" id="BC1CF78E-6D90-E7BC-5040-DB9333B7B663">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:27:44 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdTo" id="A1671768-A7FB-524B-66A8-DDD5C92CAD84">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:27:54 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Probability" id="BFA30EDA-3E0B-60E2-A52D-8F94A93240A1">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:28:00 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id" id="E34C0E01-0DBF-DCC3-02B0-EA0259ABC12C">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:31:30 UTC</createdTime>
+<generatorID>F0ABC418-604E-0DC9-5B4D-DB0557B95FA8</generatorID>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>69D76431-0F1A-8922-22AE-A4D1BB069376</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A4126993-A221-AC9A-B6DA-C7DB9D50474E" name="ResourcesAdjacencySec PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:27:53 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BC1CF78E-6D90-E7BC-5040-DB9333B7B663</attributeRef>
+<attributeRef>A1671768-A7FB-524B-66A8-DDD5C92CAD84</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

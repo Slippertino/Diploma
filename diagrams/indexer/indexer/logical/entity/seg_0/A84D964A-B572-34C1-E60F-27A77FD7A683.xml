@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A84D964A-B572-34C1-E60F-27A77FD7A683" name="Resources">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:46 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="69D76431-0F1A-8922-22AE-A4D1BB069376">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:52 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ResourceHeaderId" id="ED6EBEF4-F201-C11A-69EB-A58D87BFE2C8">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:19:04 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="08147324-CF41-028E-5BA3-1EC34B15370E">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:19:17 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Title" id="683E95DF-FEA3-EC08-E793-62E0F5774A3E">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:19:29 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CompressionType" id="E799A750-2086-E73D-1661-985D5E9B95EC">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:19:42 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Content" id="335B3D17-DFDB-7926-7937-E0895E79F135">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:01 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT041</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Size" id="E1AE725E-335D-1885-B455-C4E68C34F288">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:18 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id1" id="BDFE106F-9424-4D08-E1A1-F2E3D593EAAB">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:30:21 UTC</createdTime>
+<generatorID>7DB9FB1F-0A00-491B-1A2E-4BE1F0349FF6</generatorID>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>F4403C6E-1673-8A5E-CE07-E532216D902A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8E8ABBAB-D135-6E62-F535-7C3C6E548FBB" name="ResourcesSec PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:19:03 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>69D76431-0F1A-8922-22AE-A4D1BB069376</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4ABC0D26-F51C-D5BD-09DD-D0201CF3F408" name="DomainsSec">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:16:53 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="FA70BBB5-85A3-84A3-3E21-8B87311F2290">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:16:59 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="149053E3-F965-1E46-77F9-32E64C3D1F6C">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:17:05 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5C03D25A-AAD1-22F1-776C-C0611F9EEE75" name="Domains PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:17:23 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FA70BBB5-85A3-84A3-3E21-8B87311F2290</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F46AEF5E-E278-5300-91AE-9B7AFE7BCBB0" name="Resource">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-01-30 21:54:15 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ResourceHeaderId" id="8BDAF494-1BBA-EAA8-89A4-CBA202E2FC83">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:04:19 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="8A51B82B-68CF-26CB-7319-08DDFE51C9BA">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-01-30 21:54:41 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Checksum" id="4BA40EFE-78B9-AAA3-9179-E9FA980A167D">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-02-18 17:49:58 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Priority" id="6C60CD7C-3852-ABE7-990B-5819226E8DBD">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-01-30 22:03:00 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Fin" id="9E45AE52-3932-2254-FBA4-F56C5F02C8DF">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-02-18 17:53:00 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id" id="F507B38D-6D7F-BF42-F670-FFFE5E35D339">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:25:44 UTC</createdTime>
+<generatorID>4BCCE735-FF3E-6382-01FA-478A14C2FE9F</generatorID>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<referedAttribute>CBD49A0D-028C-381E-3D1C-7720E974DF15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="151C5134-CCAE-0CD7-4174-ACE1CF71E54D" name="DomainId_Name">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-01-30 21:57:16 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>8BDAF494-1BBA-EAA8-89A4-CBA202E2FC83</newElementsIDs>
+<usedAttributes>
+<attributeRef>8BDAF494-1BBA-EAA8-89A4-CBA202E2FC83</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="BFC2F5CC-889D-8D5E-2E40-9F17CCDE4F16" name="Name">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:26:36 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<newElementsIDs>8A51B82B-68CF-26CB-7319-08DDFE51C9BA</newElementsIDs>
+<usedAttributes>
+<attributeRef>8A51B82B-68CF-26CB-7319-08DDFE51C9BA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

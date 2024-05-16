@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DD06A1F1-2130-D96C-404B-B15A02E9223B" name="Lexems">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:43 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="BCC8C1E5-5C13-9E73-E5F8-FAF7AB0C02B0">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:48 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="E488F253-D083-1221-CF51-A05A441B0025">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:55 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Language" id="3A74EAA6-4AFF-C6D1-43BA-5ACB6FA18D86">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:21:05 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Df" id="B28264B2-7C73-9D91-B8CE-00A55E5A41AB">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:21:12 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LexemId" id="54AF416C-BE33-0D22-CFCB-D7E3D6F916EF">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:31:14 UTC</createdTime>
+<generatorID>AED02D77-3695-B705-266A-5B649842ECF7</generatorID>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>65BB7570-6CA0-D725-938D-C20FFDAAE4B6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="79741EA4-D288-983E-CA43-E46EB55B39EA" name="LexemsSec PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:20:53 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BCC8C1E5-5C13-9E73-E5F8-FAF7AB0C02B0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

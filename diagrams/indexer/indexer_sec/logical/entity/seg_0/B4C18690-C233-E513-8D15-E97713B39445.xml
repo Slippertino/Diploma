@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B4C18690-C233-E513-8D15-E97713B39445" name="ResourcesLexemsSec">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:21:48 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ResourceId" id="237AC019-0BA7-508B-BAAF-5474B2AB32ED">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:21:56 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LexemId" id="6BD529F6-3D05-C3DF-72E4-32E9909B4784">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:22:08 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Wtf" id="E4CD0902-2097-1BF9-8608-D33B91CECD13">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:22:16 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Rank" id="DF41884B-D657-D62A-7CAF-7ECCE004DC36">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:22:41 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id" id="6DD7FC68-E375-5E4C-18BF-7DC802AD4556">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:30:29 UTC</createdTime>
+<generatorID>B17E8867-1810-E2EB-D5CC-C4E5E0D302EC</generatorID>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>69D76431-0F1A-8922-22AE-A4D1BB069376</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id1" id="7C5CED78-57F7-A408-40C9-42AAED78E6FF">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:30:37 UTC</createdTime>
+<generatorID>7283B3ED-1345-90C6-9D5B-AC018F3725BE</generatorID>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>BCC8C1E5-5C13-9E73-E5F8-FAF7AB0C02B0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="931D6136-275E-9B95-F751-3084BB1FDB26" name="ResourcesLexemsSec PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:22:07 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>237AC019-0BA7-508B-BAAF-5474B2AB32ED</attributeRef>
+<attributeRef>6BD529F6-3D05-C3DF-72E4-32E9909B4784</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DB368DFD-DF14-D6EA-49B1-5A8938409926" name="Method">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:02:04 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="F7A6FF2F-D9E1-1C87-ACDF-8447C7DC00B4">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:02:11 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="7D5C495E-9FF4-904D-2EFD-D4C5B85CEAFC">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:02:30 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="22F34AEB-A4A1-E7A6-4CB3-526886720526" name="Method PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:02:27 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F7A6FF2F-D9E1-1C87-ACDF-8447C7DC00B4</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="FDA50A76-6E2F-5F04-BCD1-9F43BF6698AE" name="Name">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-04-15 14:03:22 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<newElementsIDs>7D5C495E-9FF4-904D-2EFD-D4C5B85CEAFC</newElementsIDs>
+<usedAttributes>
+<attributeRef>7D5C495E-9FF4-904D-2EFD-D4C5B85CEAFC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

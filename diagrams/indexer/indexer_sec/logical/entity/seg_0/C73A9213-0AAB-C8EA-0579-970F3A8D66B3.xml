@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C73A9213-0AAB-C8EA-0579-970F3A8D66B3" name="ResourcesHeadersSec">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:01 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="F4403C6E-1673-8A5E-CE07-E532216D902A">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:09 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MethodId" id="290891DF-8CE4-EEAE-041D-B609348BB11A">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:10 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DomainId" id="B8EE57BC-F8D1-9000-6C6F-4FC9553DD78F">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:09 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id1" id="C8E904F8-B125-5ECC-15A2-5EBE85EB3DCE">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:29:58 UTC</createdTime>
+<generatorID>19C51B32-1250-7313-4D16-642CC277BF08</generatorID>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>EE98626B-FB4F-97D8-DCF5-671579E8C62E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id2" id="16D9322D-EB75-8F41-8544-ABF677CD3F5E">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:30:07 UTC</createdTime>
+<generatorID>EBF6B179-5AFE-7368-7CCE-CD1EB1964E2B</generatorID>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<referedAttribute>FA70BBB5-85A3-84A3-3E21-8B87311F2290</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="999A020E-2AA6-470D-42F6-D82B604D920D" name="ResourcesHeadersSec PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:18:17 UTC</createdTime>
+<ownerDesignName>indexer_sec</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F4403C6E-1673-8A5E-CE07-E532216D902A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

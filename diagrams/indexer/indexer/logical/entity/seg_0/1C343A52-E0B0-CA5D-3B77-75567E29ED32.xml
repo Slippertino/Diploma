@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1C343A52-E0B0-CA5D-3B77-75567E29ED32" name="Methods">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:15:18 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="EE98626B-FB4F-97D8-DCF5-671579E8C62E">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:15:25 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Name" id="278FCF8B-FA12-3C20-B3B6-6C0231A00EFC">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:15:32 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="86A2B67D-4AA2-B2BB-BA91-65549089A03B" name="Methods PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:15:42 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EE98626B-FB4F-97D8-DCF5-671579E8C62E</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="E0FD8290-C04B-3493-8C37-F766B4534F44" name="UK_Methods">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-16 02:15:48 UTC</createdTime>
+<ownerDesignName>indexer</ownerDesignName>
+<engineerTo>
+<item key="5F980222-6044-B4A1-E6F6-15D8AE71B536" value="true"/>
+</engineerTo>
+<newElementsIDs>278FCF8B-FA12-3C20-B3B6-6C0231A00EFC</newElementsIDs>
+</identifier>
+</identifiers>
+</Entity>

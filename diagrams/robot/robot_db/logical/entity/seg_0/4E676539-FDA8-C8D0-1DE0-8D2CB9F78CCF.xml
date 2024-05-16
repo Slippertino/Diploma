@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4E676539-FDA8-C8D0-1DE0-8D2CB9F78CCF" name="ResourcesHeaders">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:17:28 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Id" id="CBD49A0D-028C-381E-3D1C-7720E974DF15">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:17:46 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MethodId" id="71916533-A8F5-C853-14C9-9842C6A6B5A3">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:18:18 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DomainId" id="6F812B40-4B70-DCE1-CA3F-D69681BDBDAC">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:18:07 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id1" id="548D6BA4-8D92-AE75-742F-95AC45B84BE3">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:24:21 UTC</createdTime>
+<generatorID>9454D3D7-F708-244F-1775-727EF74168D5</generatorID>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<referedAttribute>B82AA550-8B83-DF6D-841C-10251FFF8B48</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Id2" id="F1121E11-0203-1C36-199B-BBC547FB7981">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:24:43 UTC</createdTime>
+<generatorID>25953DCE-9FAD-1A20-9C57-B316CB87F606</generatorID>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<referedAttribute>F7A6FF2F-D9E1-1C87-ACDF-8447C7DC00B4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="19793589-F886-5A7A-B929-3A52B92D4D22" name="ResourcesHeaders PK">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:18:04 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CBD49A0D-028C-381E-3D1C-7720E974DF15</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="9F22873D-C1A7-467F-A764-418C59024E34" name="UK_ResourcesHeaders">
+<createdBy>Пользователь</createdBy>
+<createdTime>2024-05-15 13:18:32 UTC</createdTime>
+<ownerDesignName>robot_db</ownerDesignName>
+<engineerTo>
+<item key="567BB9C6-733F-4742-B13C-F7F3FF6530ED" value="true"/>
+</engineerTo>
+<newElementsIDs>6F812B40-4B70-DCE1-CA3F-D69681BDBDAC,71916533-A8F5-C853-14C9-9842C6A6B5A3</newElementsIDs>
+<usedAttributes>
+<attributeRef>6F812B40-4B70-DCE1-CA3F-D69681BDBDAC</attributeRef>
+<attributeRef>71916533-A8F5-C853-14C9-9842C6A6B5A3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
