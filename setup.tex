@@ -1,76 +1,24 @@
-\documentclass[a4paper,14pt]{article}
-\usepackage{extsizes} % для размера 14
+\documentclass{vkr}
 \usepackage[english, russian]{babel} % переносы
 \usepackage{graphicx} % для вставки картинок
-\usepackage{fontspec} % шрифт Times
-\setmainfont{Times New Roman}
-\usepackage{indentfirst} % отступ первого абзаца
-\setlength{\parindent}{1.25cm} % отступ первой строки
-%\usepackage[onehalfspacing]{setspace}% полуторный интервал
-%\renewcommand{\baselinestretch}{1.5}
-\def\onehalflinespread{1.41}
-\linespread{\onehalflinespread}
-\frenchspacing % пробел после двоеточия
-\usepackage{geometry} % поля
-\usepackage{float} % перенос текста после рисунков
-\floatplacement{figure}{H}
-\geometry{left=3cm}
-\geometry{right=1.5cm}
-\geometry{top=2cm}
-\geometry{bottom=2cm}
-\sloppy % увеличение отступов между словами в строке при невозможности переноса
-\usepackage[defaultlines=2,all]{nowidow} % абзац с новой страницы при нехватке места на заданное количество строк
-\renewcommand{\labelitemi}{-} % тире в ненумерованных списках
-
 \graphicspath{{images/}} % путь к изображениям
-\renewcommand{\thefigure}{\thesection.\arabic{figure}} % шаблон номера рисунков
-\renewcommand{\thetable}{\thesection.\arabic{table}} % шаблон номера таблиц
-\newcommand{\newsection}{\clearpage\setcounter{figure}{0}\setcounter{table}{0}} % начало нового раздела 
-\newcommand{\continuecaption}[1]{\caption*{#1}\\ \hline }
-
-\makeatletter
-\newcommand{\centertocsection}{\@dblarg\ah@centertocsection}
-\def\ah@centertocsection[#1]#2{\phantomsection\section*{#1}\def\\{\relax\ifhmode\unskip\fi\space\ignorespaces}\addcontentsline{toc}{section}{#2}}
-\makeatother
-
-%\usepackage{longtable}
-\usepackage{xltabular}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float} % определяет метод H для рисунка с переносом на следующую страницу, ели не помещается
+\usepackage{pdflscape}
+\addto{\captionsrussian}{\renewcommand{\refname}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
+\usepackage{xltabular} % для вставки таблиц
 \usepackage{makecell}
-%\usepackage{setspace}
-\renewcommand\theadfont{}
+\renewcommand\theadfont{} % шрифт в /thead
+\usepackage{array} % для определения новых типов столбцов таблиц
 \newcolumntype{T}{>{\centering\arraybackslash}X} % новый тип столбца T - автоматическая ширина столбца с выравниванием по центру
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X} % новый тип столбца R - автоматическая ширина столбца с выравниванием по правому краю
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % новый тип столбца C - фиксированная ширина столбца с выравниванием по центру
 \newcolumntype{r}[1]{>{\raggedleft\arraybackslash}p{#1}} % новый тип столбца r - фиксированная ширина столбца с выравниванием по правому краю
 \newcommand{\centrow}{\centering\arraybackslash} % командой \centrow можно центрировать одну ячейку (заголовок) в столбце типа X или p, оставив в оcтальных ячейках другой тип выравнивания
 \newcommand{\finishhead}{\endhead\hline\endlastfoot}
+\newcommand{\continuecaption}[1]{\captionsetup{labelformat=empty} \caption[]{#1}\\ \hline }
 \usepackage{etoolbox}
-\usepackage{totcount}
-\newtotcounter{tablecnt}
-\newtotcounter{figurecnt}
-\newtotcounter{bibcnt}
-\newtotcounter{imglistcnt}
-
-\def\toppad{4mm}
-\def\tablepreskip{17.5pt}
-\def\tablebelowskip{8.5pt}
-\def\figurepreskip{21.5pt}
-\def\figureaboveskip{10pt}
-\def\figurebelowskip{8.5pt}
-
-\setlength{\LTpre}{\tablepreskip}
-\setlength{\LTpost}{\tablebelowskip}
-
-\newbool{processtable}
-\setbool{processtable}{true}
-
-\newbool{processfigure}
-\setbool{processfigure}{true}
-
-\AtBeginEnvironment{xltabular}{\ifbool{processtable}{\stepcounter{tablecnt}\renewcommand{\arraystretch}{\onehalflinespread}\linespread{1.0}\selectfont}{\vspace{-13pt}}}
-
-\AtBeginEnvironment{longtable}{\stepcounter{tablecnt}\vspace{5pt}}
-\AfterEndEnvironment{longtable}{\vspace{7pt}}
+\AtBeginEnvironment{xltabular}{\refstepcounter{tablecnt}} % подсчет таблиц xltabular, обычные таблицы подсчитываются в классе
 
 \usepackage[tableposition=top]{caption} % подпись таблицы вверху
 \captionsetup{strut=off}
@@ -80,228 +28,18 @@
 \DeclareCaptionLabelFormat{gosttable}{Таблица #2} %подпись таблицы
 \DeclareCaptionLabelSeparator{gost}{~--~} %разделитель в рисунках и таблицах
 \captionsetup{labelsep=gost}
-\captionsetup[figure]{aboveskip=\figureaboveskip,belowskip=\figurebelowskip,justification=centering,labelformat=gostfigure}
-\captionsetup[table]{font={stretch=\onehalflinespread},skip=0pt,belowskip=0pt,aboveskip=8.5pt,singlelinecheck=off,labelformat=gosttable}
+\captionsetup[figure]{aboveskip=10pt,belowskip=4mm,justification=centering,labelformat=gostfigure} % настройка подписи рисунка
+\captionsetup[table]{font={stretch=1.41},skip=0pt,belowskip=0pt,aboveskip=8.5pt,singlelinecheck=off,labelformat=gosttable} % настройка подписи таблицы
 
-\usepackage{titlesec}
-
-\titleformat{name=\section,numberless}[block]
-{\normalsize\filcenter}
-{}
-{0pt}{}  %настройка ненумерованного раздела (Введение, содержание)
-
-\titleformat{\section}[block] %настройка заголовка раздела
-{\normalsize\bfseries}
-{\hspace{1.25cm}\thesection}
-{1em}{}
-
-\titleformat{\subsection}[block]  %настройка заголовка подраздела
-{\normalsize\bfseries}
-{\hspace{1.25cm}\thesubsection}
-{1em}{}
-\setlength\leftmarginii  {0pt}
-
-\titleformat{\subsubsection}[block]
-{\normalsize\bfseries}
-{\hspace{1.25cm}\thesubsubsection}
-{1em}{}
-
-\titleformat{\paragraph}[block]
-{\normalsize\bfseries}
-{\hspace{1.25cm}\theparagraph}
-{1em}{}
-
-\titlespacing*{name=\section,numberless}{0pt}{\toppad}{\toppad} % отступы разделов
-\titlespacing*{\section}{0pt}{\toppad}{\toppad}
-\titlespacing*{\subsection}{0pt}{\toppad}{\toppad}
-\titlespacing*{\subsubsection}{0pt}{\toppad}{\toppad}
-\titlespacing*{\paragraph}{0pt}{\toppad}{\toppad}
-\usepackage{array} % новый вид колонки с выравниванием по центру
+\setlength{\LTpre}{8mm} % отступ сверху таблицы
+\setlength{\LTpost}{6mm} % отступ снизу таблицы
 
 \usepackage{enumitem}
 \setlist{nolistsep,wide=\parindent,itemindent=*} % отступы вокруг списков, выравнивание с учетом разделителя
 
-\usepackage[]{tocloft}
-\setlength{\cftbeforetoctitleskip}{-1em}
-\addto\captionsrussian{
-	\renewcommand\contentsname{}
-}
-\renewcommand{\cftdot}{} % убрать отточие
-\renewcommand{\cftsecfont}{\normalsize} % не жирный шрифт раздела в оглавлении
-\renewcommand{\cftsecpagefont}{\textmd} % не жирный номер страницы для раздела
-\setcounter{tocdepth}{4} % число уровней оглавления
-\setcounter{secnumdepth}{4} % число уровней подразделов
-
-\def\secwidth{0pt}
-\setlength{\cftsecnumwidth}{\secwidth}
-\setlength{\cftsubsecnumwidth}{\secwidth}
-\setlength{\cftsubsubsecnumwidth}{\secwidth}
-\setlength{\cftparanumwidth}{\secwidth}
-\setlength{\cftbeforesecskip}{0pt} % интервал между разделами содержания
-\setlength{\cftsecindent}{0pt}% Remove indent for \section
-\setlength{\cftsubsecindent}{0pt}% Remove indent for \subsection
-\setlength{\cftsubsubsecindent}{0pt}% Remove indent for \subsubsection
-\setlength{\cftparaindent}{0pt}% Remove indent for \paragraph
-
-\def\secindent{3.8em}
-\renewcommand{\cftsecaftersnumb}{\hspace{\secindent}}
-\renewcommand{\cftsubsecaftersnumb}{\hspace{\secindent}}
-\renewcommand{\cftsubsubsecaftersnumb}{\hspace{\secindent}}
-\renewcommand{\cftparaaftersnumb}{\hspace{\secindent}}
-
-\makeatletter
-\renewcommand\@biblabel[1]{#1.} %оформление элемента списка литературы
-\renewenvironment{thebibliography}[1]
-{\list{\@biblabel{\@arabic\c@enumiv}}%
-	{\settowidth\labelwidth{\@biblabel{#1}}%
-		\leftmargin\labelwidth
-		\setlength{\topsep}{0pt}                  
-		\setlength{\partopsep}{0pt}
-		\setlength{\itemsep}{0pt}
-		\setlength{\parsep}{0pt}
-		\setlength{\parskip}{0pt}
-		\setlength{\itemindent}{1.75cm}
-		\setlength{\leftmargin}{0pt}
-		\@openbib@code
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-	\sloppy
-	\clubpenalty4000
-	\interlinepenalty10000 %запрет переноса элемента на новую страницу
-	\@clubpenalty \clubpenalty
-	\widowpenalty4000%
-	\sfcode`\.\@m}
-{\def\@noitemerr
-	{\@latex@warning{Empty `thebibliography' environment}}%
-	\endlist}
-
-\newsavebox\saved@arstrutbox 
-\newcommand*{\setarstrut}[1]{% команда для уменьшения высоты строки в таблице
-	\noalign{%
-		\begingroup
-		\global\setbox\saved@arstrutbox\copy\@arstrutbox
-		#1%
-		\global\setbox\@arstrutbox\hbox{%
-			\vrule \@height\arraystretch\ht\strutbox
-			\@depth\arraystretch \dp\strutbox
-			\@width\z@
-		}%
-		\endgroup
-	}%
-}
-\newcommand*{\restorearstrut}{% восстановление высоты строки
-	\noalign{%
-		\global\setbox\@arstrutbox\copy\saved@arstrutbox
-	}%
-}
-
-\makeatother
-
-% Раскомментировать блок при необходимости использования страниц с альбомной ориентацией. Предпочтительнее их не использовать, а осуществлять поворт рисунков на 90 градусов.
-%
-%Пример использования:
-%
-%%\begin{albumpage}
-%%	\begin{figure}
-%	%		\centering
-%	%%		\vskip 1.0cm %способ добавить отступ, если необходимо
-%	%		\includegraphics[height=0.95\textheight]{img/precedents_common}
-%	%		\caption{Диаграмма прецедентов}
-%	%		\label{fig:precedentscommon}
-%	%	\end{figure}
-%%\end{albumpage}
-%
-%\newbool{onalbumpage}
-%\setbool{onalbumpage}{false}
-%\BeforeBeginEnvironment{figure}{%
-%	\ifbool{onalbumpage}{% true part:
-%	}{
-%		\stepcounter{figurecnt}\addvspace{\figurepreskip}
-%	}
-%}
-%
-%\usepackage{lscape}
-%\usepackage{pdflscape}
-%\usepackage{everypage}
-%
-%\newlength{\hfoot}
-%\newlength{\vfoot}
-%\AddEverypageHook{\ifdim\textwidth=\linewidth\relax
-%	\else\setlength{\hfoot}{-\topmargin}%
-%	\addtolength{\hfoot}{-\headheight}%
-%	\addtolength{\hfoot}{-\headsep}%
-%	\addtolength{\hfoot}{-.5\linewidth}%
-%	\ifodd\value{page}\setlength{\vfoot}{\oddsidemargin}%
-%	\else\setlength{\vfoot}{\evensidemargin}\fi%
-%	\addtolength{\vfoot}{\textheight}%
-%	\addtolength{\vfoot}{\footskip}%
-%	\raisebox{\hfoot}[0pt][0pt]{\rlap{\hspace{.981\vfoot}\rotatebox[origin=cB]{90}{\thepage}}}\fi}
-%
-%\newenvironment{albumpage}{
-%	\captionsetup[figure]{belowskip=0pt}
-%	\setbool{onalbumpage}{true}
-%%	\newgeometry{left=2cm,right=2cm,top=1.5cm,bottom=3cm}
-%	\begin{landscape}
-%		\pagestyle{empty}
-%}{
-%	\end{landscape}
-%	\pagestyle{plain}
-%%	\restoregeometry
-%	\setbool{onalbumpage}{false}
-%	\captionsetup[figure]{belowskip=\figurebelowskip}
-%}
-%
-% Закомментировать строку ниже
-%
-\BeforeBeginEnvironment{figure}{\ifbool{processfigure}{\stepcounter{figurecnt}\vspace{\figurepreskip}}{}}
-
-\def\oldbibitem{} \let\oldbibitem=\bibitem
-\def\bibitem{\stepcounter{bibcnt}\oldbibitem}
-
-\newcommand{\fillcenter}[2][\fill]{%
-	\lhrulefill{#1}%
-	\makebox[0pt]{#2}\lhrulefill{#1}}
-	
-\newcommand{\fillleft}[2][\fill]{%
-	\underline{#2}\lhrulefill{#1}}
-	
-\newcommand{\lhrulefill}[1]{%
-	\leavevmode
-	\leaders\hrule height -.67ex depth \dimexpr .67ex+.4pt\relax % define the leader
-	\hskip\glueexpr#1/2\relax\relax % how much it should extend
-	\kern0pt
-}
-
-\regtotcounter{page}
-
-% работа содержит \formbytotal{tablecnt}{рисун}{ок}{ка}{ков} % основа слова, окончания для согласования с 1 (рисун_ок), 2  (рисун_ка) и 5 (рисун_ков)
-\def\formbytotal#1#2#3#4#5{%
-	\newcount\c
-	\c \totvalue{#1}\relax
-	\newcount\last
-	\newcount\pnul
-	\last \c\relax
-	\divide \last 10
-	\pnul \last\relax
-	\divide\pnul 10
-	\multiply \pnul-10
-	\advance \pnul\last
-	\multiply \last-10
-	\advance \last\c
-	\total{#1}~#2%
-	\ifnum\pnul=1#5\else%
-	\ifcase\last#5\or#3\or#4\or#4\or#4\else#5\fi
-	\fi
-}
-
-%\usepackage{showframe} % show border
-\usepackage[hidelinks]{hyperref}
-
 \usepackage{color} %% это для отображения цвета в коде
 \usepackage{listings} %% листинги кода
-
-\setmonofont[Scale=0.7]{dejavu-sans-mono.ttf} % моноширный шрифт для листинга
+\setmonofont[Scale=0.7]{Verdana} % моноширный шрифт для листинга
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -357,5 +95,3 @@ escapeinside={\%*}{*)}   % если нужно добавить коммента
   ^^00}
 \lst@RestoreCatcodes
 \makeatother
-
-\usepackage{adjustbox} % поворот изображений
