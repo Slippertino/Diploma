@@ -295,7 +295,6 @@ $P(i, j) = \frac{1}{L_i} * (1 - \alpha) + \frac{1}{N} * \alpha$
 \caption{ER-диаграмма черновой части базы данных индексатора распределенной системы}
 \label{indexer/indexer_sec_db:image}
 \end{figure}
-
 \begin{figure}
 \center{\includegraphics[width=1\linewidth]{indexer/indexer_db}}
 \caption{ER-диаграмма эталонной части базы данных индексатора распределенной системы}
@@ -305,7 +304,6 @@ $P(i, j) = \frac{1}{L_i} * (1 - \alpha) + \frac{1}{N} * \alpha$
 \subsubsection{Описание концептуальных классов}
 
 На рисунке 3.9 представлена диаграмма концептуальных классов для индексатора распределенной системы.
-
 \begin{figure}
 \center{\includegraphics[width=1\linewidth]{indexer/diagram_classes}}
 \caption{Диаграмма концептуальных классов для индексатора распределенной системы}
@@ -360,3 +358,24 @@ $R(d_1, d_2)=\frac{\vec{d_1} * \vec{d_2}}{|\vec{d_1}| |\vec{d_2}|}$
 \caption{Диаграмма компонентов поисковика распределенной поисковой системы}
 \label{searcher/diagram_components:image}
 \end{figure}
+
+\subsubsection{Описание REST API поисковика}
+
+В таблице 3.1 приведено описание REST API сервиса поиска.
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Поисковый сервис}\label{searchservice:table}\\ \hline
+	\thead{HTTP-\\метод} & \thead{Описание} & \thead{Входные\\параметры} & \thead{Пример\\JSON ответа} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{searchservice:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	GET api/search?
+    query=:query\&
+    offset=:offset\&
+    limit=:limit & 
+    Получение результатов поиска & 
+	\{"query": "string"\, "offset": "int"\, "limit": "int"\} & 
+    \{"status": "int"\, "count": "int"\, "results": [ \{ "url": "string"\, "title": "string"\, "relevance": "double"\}] \} \\ \hline
+\end{xltabular}
