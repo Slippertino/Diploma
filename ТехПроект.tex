@@ -132,6 +132,66 @@ RabbitMQ, система управления очередями сообщен�
 
 \subsubsection{Описание базы данных}
 
+В состав сущностей базы данных входят:
+\begin{itemize}
+\item «Methods» -- методы (протоколы) получения данных с ресурса;
+\item «Domains» -- доменные имена ресурсов;
+\item «ResourcesHeaders» -- заголовки ресурсов, включающие в себя метод получения данных и доменное имя;
+\item «Resources» -- ресурсы, которые обходит робот.
+\end{itemize}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Methods»}\label{crawler_methods:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{crawler_methods:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & guid & + & Уникальный идентификатор метода \\ \hline
+	Name & varchar & + & Название метода \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Domains»}\label{crawler_domains:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{crawler_domains:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & guid & + & Уникальный идентификатор домена \\ \hline
+	Name & varchar & + & Название домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesHeaders»}\label{crawler_resources_headers:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{crawler_resources_headers:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & guid & + & Уникальный идентификатор заголовка \\ \hline
+	MethodId & guid & + & Уникальный идентификатор метода \\ \hline
+	DomainId & guid & + & Уникальный идентификатор домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Resources»}\label{crawler_resources:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{crawler_resources:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & guid & + & Уникальный идентификатор ресурса \\ \hline
+	Name & varchar & + & Название ресурса \\ \hline
+	Checksum & varchar & + & SHA256-хеш содержимого ресурса \\ \hline
+	Priority & double & + & Приоритет ресурса в обработке \\ \hline
+	Fin & boolean & - & Флаг окончания обработки \\ \hline
+\end{xltabular}
+
 На рисунке 3.3 представлена ER-диаграмма базы данных поискового робота.
 
 \begin{figure}
@@ -287,6 +347,239 @@ $P(i, j) = \frac{1}{L_i} * (1 - \alpha) + \frac{1}{N} * \alpha$
 \item Эталонная часть модели, предназначенная исключительно для чтения поисковиком при обработке пользовательских запросов;
 \item Черновая часть модели, предназначенная для создания новых версий индекса, не вмешиваясь во внутреннюю структуру эталонной модели. Она содержит в себе полную копию структуры эталонной модели с несколькими дополнениями, необходимыми для эффективного создания индекса. После завершения создания черновой модели она атомарно целиком заменяет эталонную, при этом полностью очищаясь для создания следующего экземпляра индекса.
 \end{enumerate}
+
+В состав сущностей базы данных входят:
+\begin{itemize}
+\item «Methods» -- методы (протоколы) получения данных с ресурса (эталон);
+\item «MethodsSec» -- методы (протоколы) получения данных с ресурса (черновик);
+\item «Domains» -- доменные имена ресурсов (эталон);
+\item «DomainsSec» -- доменные имена ресурсов (черновик);
+\item «ResourcesHeaders» -- заголовки ресурсов, включающие в себя метод получения данных и доменное имя (эталон);
+\item «ResourcesHeadersSec» -- заголовки ресурсов, включающие в себя метод получения данных и доменное имя (черновик);
+\item «Resources» -- ресурсы, которые входят в индекс системы (эталон);
+\item «ResourcesSec» -- ресурсы, которые входят в индекс системы (черновик);
+\item «Lexems» -- информация о лексемах, полученных с ресурсов (эталон);
+\item «LexemsSec» -- нформация о лексемах, полученных с ресурсов (черновик);
+\item «ResourcesLexems» -- информация о лексемах в содержимом ресурсов (эталон);
+\item «ResourcesLexemsSec» -- нформация о лексемах в содержимом ресурсов (черновик);
+\item «ChampionLists» -- чемпионские списки для каждой лексемы (эталон);
+\item «ChampionListsSec» -- емпионские списки для каждой лексемы (черновик);
+\item «ResourcesAdhacencySec» -- представление вероятностной матрицы смежности ресурсов;
+\item «TemporaryResourceRanksSec» -- промежуточное хранилище рангов ресурсов.
+\end{itemize}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Methods»}\label{indexer_methods:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_methods:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор метода \\ \hline
+	Name & varchar & + & Название метода \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «MethodsSec»}\label{indexer_methods_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_methods_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор метода \\ \hline
+	Name & varchar & + & Название метода \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Domains»}\label{indexer_domains:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_domains:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор домена \\ \hline
+	Name & varchar & + & Название домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «DomainsSec»}\label{indexer_domains_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_domains_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор домена \\ \hline
+	Name & varchar & + & Название домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesHeaders»}\label{indexer_resources_headers:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_headers:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор заголовка \\ \hline
+	MethodId & integer & + & Уникальный идентификатор метода \\ \hline
+	DomainId & integer & + & Уникальный идентификатор домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesHeadersSec»}\label{indexer_resources_headers_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_headers_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор заголовка \\ \hline
+	MethodId & integer & + & Уникальный идентификатор метода \\ \hline
+	DomainId & integer & + & Уникальный идентификатор домена \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Resources»}\label{indexer_resources:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & bigint & + & Уникальный идентификатор ресурса \\ \hline
+	ResourceHeaderId & integer & + & Уникальный идентификатор заголовка ресурса \\ \hline 
+	Name & varchar & + & Название ресурса \\ \hline
+	Title & varchar & + & Заголовок ресурса \\ \hline
+	CompressionType & varchar & - & Тип сжатия содержимого в базе данных \\ \hline
+	Content & binary & + & Сжатое содержимое ресурса \\ \hline
+	Size & integer & + & Размер исходного содержимого ресурса в байтах \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesSec»}\label{indexer_resources_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & bigint & + & Уникальный идентификатор ресурса \\ \hline
+	ResourceHeaderId & integer & + & Уникальный идентификатор заголовка ресурса \\ \hline 
+	Name & varchar & + & Название ресурса \\ \hline
+	Title & varchar & + & Заголовок ресурса \\ \hline
+	CompressionType & varchar & - & Тип сжатия содержимого в базе данных \\ \hline
+	Content & binary & + & Сжатое содержимое ресурса \\ \hline
+	Size & integer & + & Размер исходного содержимого ресурса в байтах \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «Lexems»}\label{indexer_lexems:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_lexems:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор лексемы \\ \hline
+	Name & varchar & + & Название лексемы \\ \hline
+	Language & varchar & + & Язык лексемы \\ \hline
+	Df & bigint & + & Документная частота лексемы \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «LexemsSec»}\label{indexer_lexems_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_lexems_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	Id & integer & + & Уникальный идентификатор лексемы \\ \hline
+	Name & varchar & + & Название лексемы \\ \hline
+	Language & varchar & + & Язык лексемы \\ \hline
+	Df & bigint & + & Документная частота лексемы \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesLexems»}\label{indexer_resources_lexems:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_lexems:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	ResourceId & bigint & + & Уникальный идентификатор ресурса \\ \hline
+	LexemId & integer & + & Уникальный идентификатор лексемы \\ \hline
+	Wtf & double & + & Абсолютная взвешенная частота лексемы в содержимом ресурса \\ \hline
+	Rank & double & + & Относительный ранг лексемы в содержимом текущего ресурса \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesLexemsSec»}\label{indexer_resources_lexems_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_lexems_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	ResourceId & bigint & + & Уникальный идентификатор ресурса \\ \hline
+	LexemId & integer & + & Уникальный идентификатор лексемы \\ \hline
+	Wtf & double & + & Абсолютная взвешенная частота лексемы в содержимом ресурса \\ \hline
+	Rank & double & + & Относительный ранг лексемы в содержимом текущего ресурса \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ChampionLists»}\label{indexer_champion_lists:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_champion_lists:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	LexemId & integer & + & Уникальный идентификатор лексемы \\ \hline
+	ResourcesId & array[bigint] & + & Массив идентификаторов ресурсов \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ChampionListsSec»}\label{indexer_champion_lists_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_champion_lists_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	LexemId & integer & + & Уникальный идентификатор лексемы \\ \hline
+	ResourcesId & array[bigint] & + & Массив идентификаторов ресурсов \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «ResourcesAdjacencySec»}\label{indexer_resources_adjacency_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_resources_adjacency_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	IdFrom & bigint & + & Уникальный идентификатор ресурса-отправителя \\ \hline
+	IdTo & integer & + & Уникальный идентификатор ресурса-назначения \\ \hline
+	Probability & double & + & Вероятность перехода \\ \hline
+\end{xltabular}
+
+\begin{xltabular}{\textwidth}{|X|X|X|X|}
+	\caption{Спецификация сущности «TemporaryResourceRanksSec»}\label{indexer_temp_resource_ranks_sec:table}\\ \hline
+	\thead{Поле} & \thead{Тип} & \thead{Обязат.} & \thead{Описание} \\ \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endfirsthead
+	\continuecaption{Продолжение таблицы \ref{indexer_temp_resource_ranks_sec:table}} \hline
+	\thead{1} & \thead{2} & \thead{3} & \thead{4} \\ \hline
+	\endhead
+	ResourceId & bigint & + & Уникальный идентификатор ресурса \\ \hline
+	Rank & double & - & Ранг ресурса \\ \hline
+\end{xltabular}
 
 На рисунках 3.7 - 3.8 представлены ER-диаграммы эталонной и черновой части базы данных индекса распределенной системы.
 
