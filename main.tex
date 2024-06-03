@@ -1,8 +1,8 @@
 \input{setup.tex}
 
 % Режим шаблона (должен быть включен один из трех)
-%\ВКРtrue
-\Практикаtrue
+\ВКРtrue
+%\Практикаtrue
 %\Курсоваяtrue
 
 \newcommand{\Дисциплина}{-} % для курсовой
@@ -32,7 +32,8 @@
 \maketitle
 \ifПрактика{}\else{
    \input{ЛистЗадания}
-   \input{Реферат}}\fi
+   \input{Реферат}
+}\fi
 \tableofcontents
 %\input{Обозначения}
 \ifПрактика{}\else{\input{Введение}}\fi
