@@ -1,10 +1,33 @@
-\section{ПРИЛОЖЕНИЕ Б \\ Фрагменты исходного кода программы}
-%\addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ Б Фрагменты исходного кода программы}
+\appendix{Фрагменты исходного кода программы}
 
-main.tex
-\lstinputlisting[language=Tex, frame=none]{main.tex}
+crawler.cpp
+\lstinputlisting[language=C++, frame=none]{code/crawler.cpp}
 
-ТехПроект.tex
-\lstinputlisting[language=Tex, frame=none]{ТехПроект.tex}
+crawler.sql
+\lstinputlisting[language=SQL, frame=none]{code/crawler.sql}
 
-\section[МЕСТО ДЛЯ ДИСКА]{На отдельных листах (CD-RW в прикрепленном конверте)} % Дополнительный аргумент позволяет указывать разный текст для заголовка раздела и элемента содержания
+indexer.cpp
+\lstinputlisting[language=C++, frame=none]{code/indexer.cpp}
+
+indexer.sql
+\lstinputlisting[language=SQL, frame=none]{code/indexer.sql}
+
+search\_controller.cpp
+\lstinputlisting[language=C++, frame=none]{code/searcher.cpp}
+
+searcher.sql
+\lstinputlisting[language=SQL, frame=none]{code/searcher.sql}
+
+logs\_collector.cpp
+\lstinputlisting[language=C++, frame=none]{code/logger.cpp}
+
+logger.sql
+\lstinputlisting[language=SQL, frame=none]{code/logger.sql}
+
+\ifВКР{
+\newpage
+\addcontentsline{toc}{section}{На отдельных листах (CD-RW в прикрепленном конверте)}
+\begin{center}
+\textbf{Место для диска}
+\end{center}
+}\fi
