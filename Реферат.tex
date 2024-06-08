@@ -2,13 +2,13 @@
 
 Объем работы равен \formbytotal{lastpage}{страниц}{е}{ам}{ам}. Работа содержит \formbytotal{figurecnt}{иллюстраци}{ю}{и}{й}, \formbytotal{tablecnt}{таблиц}{у}{ы}{}, \arabic{bibcount} библиографических источников и \formbytotal{числоПлакатов}{лист}{}{а}{ов} графического материала. Количество приложений – 2. Графический материал представлен в приложении А. Фрагменты исходного кода представлены в приложении Б.
 
-Перечень ключевых слов: поиск, индекс, система, распределенность, масштабирование, C++, RabbitMQ, Postgres, архитектура, тестирование, Интернет, библиотека, компонент, класс, диаграмма, API, веб-сайт.
+Перечень ключевых слов: поиск, индекс, ранг, система, распределенность, масштабирование, архитектура, тестирование, Интернет, библиотека, компонент, класс, диаграмма, API, веб-сайт.
 
 Объектом разработки является распределенная поисковая система для Интернета.
 
 Целью выпускной квалификационной работы является разработка эффективного инструмента для нахождения наиболее релевантных WEB-документов по пользовательскому запросу.
 
-В процессе создания распределенной системы были выделены основные логические самостоятельные компоненты, реализованные в парадигме ООП. Были разработаны следующие компоненты: поисковый робот, индексатор, поисковик, веб-сайт и сборщик журналируемой информации.
+В процессе создания распределенной системы были выделены основные логические самостоятельные компоненты, реализованные в парадигме ООП. Для высокой производительности основная часть системы была реализована с помощью языка C++. Для уменьшения связанности и повышения гибкости был использован брокер сообщений RabbitMQ. Также была применена такая технология баз данных, как Postgres, для хранения и манипулирования большими объемами информации в рамках системы. Дополнительно были использованы различные вспомогательные инструменты для работы с асинхронностью, многопоточностью, логгированием и анализом текста разных типов, что сделало систему более модульной и поддерживаемой. Были разработаны следующие компоненты: поисковый робот, индексатор, поисковик, веб-сайт и сборщик журналируемой информации.
 
 Каждый из компонентов удачно прошел системное тестирование, что говорит о достаточно высокой надежности системы.
 
@@ -17,13 +17,13 @@
   
 The volume of work is \formbytotal{lastpage}{page}{}{s}{s}. The work contains \formbytotal{figurecnt}{illustration}{}{s}{s}, \formbytotal{tablecnt}{table}{}{s}{s}, \arabic{bibcount} bibliographic sources and \formbytotal{числоПлакатов}{sheet}{}{s}{s} of graphic material. The number of applications is 2. The graphic material is presented in annex A. The layout of the site, including the connection of components, is presented in annex B.
 
-The list of keywords: search, index, system, distribution, scaling, C++, RabbitMQ, Postgres, architecture, testing, Internet, library, component, class, diagram, API, website.
+The list of keywords: search, index, rank, system, distribution, scaling, architecture, testing, Internet, library, component, class, diagram, API, website.
 
 The object of the development is a distributed search engine for the Internet.
 
 The purpose of the final qualification work is to develop an effective tool for finding the most relevant WEB documents for a user request.
 
-In the process of creating a distributed system, the main logical independent components implemented in the OOP paradigm were identified. The following components have been developed: a search robot, an indexer, a search engine, a website and a collector of journaled information.
+In the process of creating a distributed system, the main logical independent components implemented in the OOP paradigm were identified. For high performance, the main part of the system was implemented using the C++ language. The RabbitMQ message broker was used to reduce connectivity and increase flexibility. Database technology such as Postgres was also used to store and manipulate large amounts of information within the system. Additionally, various auxiliary tools were used to work with asynchrony, multithreading, logging and text analysis of various types, which made the system more modular and supported. The following components have been developed: a search robot, an indexer, a search engine, a website and a collector of journaled information.
 
-Each of the components has successfully passed system testing, which indicates a fairly high reliability of the system.
+Each of the components has successfully passed system testing, which indicates a fairly high reliability of the system
 \selectlanguage{russian}
